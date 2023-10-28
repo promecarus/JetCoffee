@@ -9,7 +9,7 @@ data class Menu(
     val price: String,
 ) {
     companion object {
-        private val dummy = listOf(
+        val dummy = listOf(
             Menu(R.drawable.menu1, "Tiramisu Coffee Milk", "Rp 28.000"),
             Menu(R.drawable.menu2, "Pumpkin Spice Latte", "Rp 18.000"),
             Menu(R.drawable.menu3, "Light Cappuccino", "Rp 20.000"),

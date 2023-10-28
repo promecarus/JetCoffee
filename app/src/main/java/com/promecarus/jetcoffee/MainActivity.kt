@@ -3,12 +3,17 @@ package com.promecarus.jetcoffee
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.promecarus.jetcoffee.ui.component.Banner
+import com.promecarus.jetcoffee.ui.component.CategoryRow
+import com.promecarus.jetcoffee.ui.component.SectionText
 import com.promecarus.jetcoffee.ui.theme.JetCoffeeTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +21,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetCoffeeTheme {
-                JetCoffeeApp()
+                Column {
+                    JetCoffeeApp()
+                }
             }
         }
     }
@@ -27,15 +34,18 @@ fun JetCoffeeApp() {
     Surface(
         modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
     ) {
-
+        Column {
+            Banner()
+            SectionText(stringResource(R.string.section_category))
+            CategoryRow()
+        }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
 fun JetCoffeeAppPreview() {
     JetCoffeeTheme {
-
+        JetCoffeeApp()
     }
 }

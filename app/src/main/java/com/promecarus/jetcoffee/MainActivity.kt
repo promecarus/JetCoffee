@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -17,28 +16,26 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetCoffeeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+                JetCoffeeApp()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!", modifier = modifier
-    )
+fun JetCoffeeApp() {
+    Surface(
+        modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
+    ) {
+
+    }
 }
+
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun JetCoffeeAppPreview() {
     JetCoffeeTheme {
-        Greeting("Android")
+
     }
 }

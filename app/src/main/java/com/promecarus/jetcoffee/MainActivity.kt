@@ -11,13 +11,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.promecarus.jetcoffee.model.Menu
 import com.promecarus.jetcoffee.ui.component.Banner
 import com.promecarus.jetcoffee.ui.component.CategoryRow
+import com.promecarus.jetcoffee.ui.component.HomeSection
 import com.promecarus.jetcoffee.ui.component.MenuRow
-import com.promecarus.jetcoffee.ui.component.SectionText
 import com.promecarus.jetcoffee.ui.theme.JetCoffeeTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,12 +39,9 @@ fun JetCoffeeApp() {
     ) {
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             Banner()
-            SectionText(stringResource(R.string.section_category))
-            CategoryRow()
-            SectionText(stringResource(R.string.section_favorite_menu))
-            MenuRow(Menu.dummy)
-            SectionText(stringResource(R.string.section_best_seller_menu))
-            MenuRow(Menu.dummyBestSeller)
+            HomeSection(R.string.section_category) { CategoryRow() }
+            HomeSection(R.string.section_best_seller_menu) { MenuRow(Menu.dummy) }
+            HomeSection(R.string.section_best_seller_menu) { MenuRow(Menu.dummyBestSeller) }
         }
     }
 }

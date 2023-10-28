@@ -16,16 +16,28 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-private val darkColorScheme =
-    darkColorScheme(primary = LightCoffeeBrown, secondary = LightCoffeeBrown)
+private val darkColorScheme = darkColorScheme(
+    primary = LightCoffeeBrown,
+    secondary = LightCoffeeBrown,
+    secondaryContainer = LightCoffeeBrown,
+    onSecondaryContainer = CoffeeBrown,
+    onSurface = LightCoffeeBrown,
+    onSurfaceVariant = LightCoffeeBrown
+)
 
-private val lightColorScheme =
-    lightColorScheme(primary = CoffeeBrown, secondary = CoffeeBrown, tertiary = Color.White)
+private val lightColorScheme = lightColorScheme(
+    primary = CoffeeBrown,
+    secondary = CoffeeBrown,
+    secondaryContainer = LightCoffeeBrown,
+    onSecondaryContainer = CoffeeBrown,
+    onSurface = CoffeeBrown,
+    onSurfaceVariant = LightGray,
+    background = Color.White
+)
 
 @Composable
 fun JetCoffeeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
@@ -47,7 +59,5 @@ fun JetCoffeeTheme(
         }
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme, typography = Typography, content = content
-    )
+    MaterialTheme(colorScheme = colorScheme, typography = Typography, content = content)
 }
